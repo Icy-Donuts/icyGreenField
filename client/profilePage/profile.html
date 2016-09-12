@@ -1,8 +1,8 @@
-<div>
-	<a href='#/searchFromProfile'>Search</a>
-	<div ng-click="search($index)" style='margin-top:20px; cursor: pointer; -webkit-appearance:button' ng-repeat="pref in preferences track by $index">
-		<div> location: {{pref.location}}</div>
-		<div>yelp preferences: {{pref.yelpPrefs}}</div>
-		<div>Search: max budget:{{pref.maxBudget}}</div> 
+<div class="card">
+  <button class='button'><a href='#/searchFromProfile'>Search</a></button>
+	<div class="profile" ng-click="search($index)" g-repeat="pref in preferences track by $index">
+		<h1> location: {{pref.location}}</h1>
+		<h1>yelp preferences: {{pref.yelpPrefs}}</h1>
+    <h1>Search: max budget:{{pref.maxBudget}}</h1>
 	</div>
 </div>
