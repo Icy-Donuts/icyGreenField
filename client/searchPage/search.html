@@ -1,0 +1,24 @@
+<div id="search">
+	<a href="#/signup"><strong>Signup</strong></a>
+	<a href="#/signin"><strong>Signin</strong></a>
+	<a href="#/profile"><strong>Profile</strong></a>
+	<button ng-click="signout()">Signout</button>
+	<div>
+		<span><input type="text" ng-model="location" placeholder="City, zip code, neighborhood..."></span>
+	</div>
+	<div>
+		<span><input type="text" ng-model="term" placeholder="food, library, cafe..."></span>
+	</div>
+	<div>
+		<span><input type="text" ng-model="budget" placeholder="what's your budget?"></span>
+	</div>
+		<span><button ng-click="search()">Search</button></span>
+	</div>
+	<div class="moreOptions" ng-click="hideMe()">more options?</div>
+	<ul class="optionLists hide">
+		<li>laundry in unit?<input type="checkbox" ng-model="options.laundryInUnit"></li>
+		<li>pets?<input type="checkbox" ng-model="options.pets"></li>
+		<li>furnished?<input type="checkbox" ng-model="options.furnished"></li>
+		<li>non-smoking?<input type="checkbox" ng-model="options.nonSmoking"></li>
+	</ul>
+</div>

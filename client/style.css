@@ -1,0 +1,30 @@
+.neighborhood {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#googleMap {
+	width: 800px;
+	height: 600px;
+}
+
+.animate-show {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  background: white;
+}
+
+.myNeighborhood {
+  width: 40%;
+}
+
+.select, .moreOptions {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
