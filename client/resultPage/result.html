@@ -1,40 +1,41 @@
 <div id="result">
-	<div>
-		<a href="#/search"><strong>New Search?</strong></a>
-	</div>
-	<div id="googleMap";"></div>
-	<div class="neighborhood">
-		<div ng-repeat="result in craigslist" ng-style="myStyle">
-		<div>
-			<div class="select" ng-click="selectNeighborhood(result.neighborhood)">
-				<h3>{{result.neighborhood}}</h3>
-				<h4>{{result.blurb}}</h4>
-				<img class="myNeighborhood" src="{{result.img}}"></img>
-			</div>
-			<ol>
-			<div ng-repeat="list in result.listings">
-				<li>
-					<table style="weight: 200px">
-						<tr>
-							<td>Title: {{list.title}}</td>
-						</tr>
-						<tr>
-							<td>Link: <a href="{{list.link}}">{{list.link}}</a></td>
-						</tr>
-						<tr>
-							<td>Price: {{list.price}}</td>
-						</tr>
-						<tr>
-							<td>Show Details? <input type="checkbox" ng-model="clicked" aria-label="Toggle ngHide"></td>
-						</tr>
-						<tr>
-							<td class="description animate-show" ng-show="clicked">{{list.text}}</td>
-						</tr>
-					</table>
-				</li>
-			</div>
-			</ol>	
-		</div>
-		</div>
-	</div>
+  <div class="header-text" ng-if="craigslist.length > 0">
+    <h1>Your results</h1>
+    <p class="body-text black">Based on your preferences, here are some listings you should check out.</p>
+  </div>
+  <div class="map-container card">
+    <div id="googleMap";"></div>
+  </div>
+  <div class="results-container">
+    <div class="neighborhood neighborhood">
+      <div class="neighborhood-section" ng-repeat="result in craigslist" ng-style="myStyle">
+        <div class="select" ng-click="selectNeighborhood(result.neighborhood)">
+          <div class="img-container">
+            <img class="myNeighborhood neighborhood-img" src="{{result.img}}"></img>
+            <div class="blurb-container">
+              <p class="blurb-title">{{result.neighborhood}}</p>
+              <span class='blurb'>{{result.blurb}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listings-container">
+          <ol>
+            <div ng-repeat="list in result.listings" class="row">
+              <li>
+                <span class="listing-title">{{list.title}}</span>
+                <span class="listing-link"><a href="{{list.link}}">View post</a></span>
+                <span class="listing-price">Rent: {{list.price}}</span>
+                <span class="listing-read-more">Read more<input type="checkbox" ng-model="clicked" aria-label="Toggle ngHide"></span>
+                <span ng-show="clicked" class='description animate-show'>{{list.text}}</span>
+              </li>
+            </div>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a href="#/search"><strong>New Search?</strong></a>
+  </div>
 </div>
