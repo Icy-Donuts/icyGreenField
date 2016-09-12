@@ -1,38 +1,38 @@
 angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.result', 'housing.service', 'housing.auth', 'housing.profile','ngRoute'])
-.config(function($routeProvider, $httpProvider) {
+.config(function($routeProvider, $httpProvider) { // all routers here
 	$routeProvider
-	.when('/signin', {
+	.when('/signin', { // routes to signin page
     templateUrl: 'authentication/signin.html',
     controller: 'AuthController'
   })
-  .when('/signup', {
+  .when('/signup', { // routes to signup page
     templateUrl: 'authentication/signup.html',
     controller: 'AuthController'
   })
-	.when('/result', {
+	.when('/result', { // routes to result page
 		templateUrl: 'resultPage/result.html',
 		controller: 'ResultController'
 	})
-	.when('/profile', {
+	.when('/profile', { // routes to profile page
     templateUrl: 'profilePage/profile.html',
     controller: 'profileController'
   })
-	.when('/search', {
+	.when('/search', { // routes to search page
 		templateUrl: 'searchPage/search.html',
 		controller: 'SearchController'
 	})
-  .when('/searchFromProfile', {
+  .when('/searchFromProfile', { // routes to searchFromProfile page
     templateUrl: 'searchPage/search.html',
     controller: 'SearchFromProfileController'
   })
-	.when('/loading', {
+	.when('/loading', { // routes to loading page
 		templateUrl: 'loadingPage/loading.html'
 	})
-	.otherwise({
+	.otherwise({ // other routes will be led to search page
 		redirectTo: '/search'
 	})
 })
-.factory('GoogleMap', function() {
+.factory('GoogleMap', function() { // a factory that generates google map for search results
 	function googleMapsInitialize(listings, neighbourhood) {
     var labels = '12345';
     markerArr = [];
@@ -76,7 +76,7 @@ angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.
 		googleMapsInitialize: googleMapsInitialize
 	};
 })
-.factory('Auth', function ($http, $location, $window) {
+.factory('Auth', function ($http, $location, $window) { // a factory that generates authentication methods
   var signin = function (user) {
     return $http({
       method: 'POST',

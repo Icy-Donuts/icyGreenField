@@ -7,6 +7,10 @@ angular.module('housing.searchFromProfile', [])
 		nonSmoking: false
 	};
 
+	var token = window.localStorage.getItem('com.shortly')
+	var payload = JSON.parse(window.atob(token.split('.')[1])); 
+	$scope.username = payload.username;
+
 	$scope.signout = function() {
 		Auth.signout();
 	}
@@ -19,15 +23,15 @@ angular.module('housing.searchFromProfile', [])
 			if (typeof data === 'object' && data.neighborhoods.length > 0) {
 				$location.path('/result');
 
-				if (Auth.isAuth()) {
-					var token = window.localStorage.getItem('com.shortly')
-					var payload = JSON.parse(window.atob(token.split('.')[1])); 
-					$scope.username = payload.username;
+				// if (Auth.isAuth()) {
+				// 	var token = window.localStorage.getItem('com.shortly')
+				// 	var payload = JSON.parse(window.atob(token.split('.')[1])); 
+				// 	$scope.username = payload.username;
 
-					Service.savePrefs($scope.username, $scope.location, $scope.term, $scope.budget).then(function(data) {
+			Service.savePrefs($scope.username, $scope.location, $scope.term, $scope.budget)
+				.then(function(data) {
 						// console.log(data);
 					});
-				}
 			} else {
 				alert(data);
 				$location.path('/search');
