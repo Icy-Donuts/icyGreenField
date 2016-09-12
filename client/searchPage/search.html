@@ -1,25 +1,33 @@
-<div id="search">
-	<h3>Hi, {{username}}</h3>
-	<a href="#/signup"><strong>Signup</strong></a>
-	<a href="#/signin"><strong>Signin</strong></a>
-	<a href="#/profile"><strong>Profile</strong></a>
-	<button ng-click="signout()">Signout</button>
-	<div>
-		<span><input type="text" ng-model="location" placeholder="City, zip code, neighborhood..."></span>
-	</div>
-	<div>
-		<span><input type="text" ng-model="term" placeholder="food, library, cafe..."></span>
-	</div>
-	<div>
-		<span><input type="text" ng-model="budget" placeholder="what's your budget?"></span>
-	</div>
-		<span><button ng-click="search()">Search</button></span>
-	</div>
-	<div class="moreOptions" ng-click="hideMe()">more options?</div>
-	<ul class="optionLists hide">
-		<li>laundry in unit?<input type="checkbox" ng-model="options.laundryInUnit"></li>
-		<li>pets?<input type="checkbox" ng-model="options.pets"></li>
-		<li>furnished?<input type="checkbox" ng-model="options.furnished"></li>
-		<li>non-smoking?<input type="checkbox" ng-model="options.nonSmoking"></li>
-	</ul>
+<div id="search" class="card">
+  <h1>Find the perfect roommate</h1>
+  <p class="body-text">We’ll match you to a neighborhood and roommate based on your interests.</p>
+  <div class="form-hr">
+    <div class="form-section">
+      <h2>Apartment must-haves:</h2>
+      <span class="label">City:<input type="text" ng-model="location" placeholder="San Francisco" value="San Francisco" disabled></span>
+      <span class="label">Budget:<input type="text" ng-model="budget" placeholder="$2000"></span>
+      <span class="label checkbox-label">Amenities:</span>
+      <span class="aside">* check what's necessary</span>
+      <ul class="optionLists">
+        <li class="checkbox"><input type="checkbox" ng-model="options.furnished"> Furnished</li>
+        <li class="checkbox"><input type="checkbox" ng-model="options.laundryInUnit"> Laundry</li>
+        <li class="checkbox"><input type="checkbox" ng-model="options.pets"> Pets</li>
+        <li class="checkbox"><input type="checkbox" ng-model="options.nonSmoking"> Non-smoking</li>
+      </ul>
+    </div>
+    <div class="form-section">
+      <h2>A bit about yourself:</h2>
+      <span class="label checkbox-label">I want to live near:</span>
+      <span class="aside">* separate multiple items with commas</span>
+      <span class="options-field"><input type="text" ng-model="term" placeholder="Library, cafe, indian food..."></span>
+      <span class="label checkbox-label">Hobbies:</span>
+      <span class="aside">* separate multiple items with commas</span>
+      <span class="options-field"><input type="text" ng-model="hobbies" placeholder="Tennis, boardgames..." disabled></span>
+
+    </div>
+
+  </div>
+
+  <button class="button centered" ng-click="search()">Search</button>
+  <!--  <div class="moreOptions" ng-click="hideMe()">more options?</div> -->
 </div>
