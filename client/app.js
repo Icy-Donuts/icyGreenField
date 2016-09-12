@@ -2,11 +2,11 @@ angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.
 .config(function($routeProvider, $httpProvider) {
 	$routeProvider
 	.when('/signin', {
-    templateUrl: 'signin.html',
+    templateUrl: 'authentication/signin.html',
     controller: 'AuthController'
   })
   .when('/signup', {
-    templateUrl: 'signup.html',
+    templateUrl: 'authentication/signup.html',
     controller: 'AuthController'
   })
 	.when('/result', {
@@ -14,7 +14,7 @@ angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.
 		controller: 'ResultController'
 	})
 	.when('/profile', {
-    templateUrl: 'profile.html',
+    templateUrl: 'profilePage/profile.html',
     controller: 'profileController'
   })
 	.when('/search', {

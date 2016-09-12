@@ -15,7 +15,7 @@ angular.module('housing.profile', [])
 
   $scope.search = function(index) {
   	var currPref = $scope.preferences[index];
-
+    $location.path('/loading');
   	Service.getResult(currPref.location, currPref.yelpPrefs, currPref.maxBudget).then(function(data) {
   		console.log('Data: ', data);
   		window.data = data;

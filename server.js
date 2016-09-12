@@ -2,7 +2,7 @@ var express = require('express')
 var app = express()
 var bp = require('body-parser')
 var dbUpdate = require('./database/updateDB.js')
-var userController = require('./userController.js')
+var userController = require('./database/userController.js')
 
 
 app.use(express.static('client'))
