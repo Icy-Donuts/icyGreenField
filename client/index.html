@@ -3,11 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Housing</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/style/style.css">
 </head>
 <body>
-	<h1>Housing App</h1>
-	<div ng-view></div>
+	<nav>
+    <div class="nav-container">
+      <button class="button search"><a href="#/search" class="search"><i class="search-icon material-icons">search</i>Search</a></button>
+      <button class="button search"><a href="#/profile" class="search"><i class="material-icons">perm_identity</i>Profile</a></button>
+    </div>
+    <div class="nav-container">
+      <button class="button signin"><a href="#/signin">Sign in</a></button>
+      <button ng-click="signout()">Signout</button>
+      <button class="button inverse signup"><a href="#/signup">Sign up</a></button>
+    </div>
+  </nav>
+  <div class="body">
+    <div class="header">
+      <div class="nav-container">Hi, {{username}}</div>
+    </div>
+    <div class="body">
+   	  <div ng-view></div>
+    </body>
+  </div>
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular-route/angular-route.js"></script>
