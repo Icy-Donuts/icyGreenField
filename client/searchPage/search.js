@@ -16,7 +16,7 @@ angular.module('housing.search', [])
 		Service.getResult($scope.location, $scope.term, $scope.budget, $scope.options).then(function(data) {
 			// console.log('Data: ', data);
 			window.data = data;
-			if (typeof data === 'object' && Object.keys(data.listings) > 0) {
+			if (typeof data === 'object' && Object.keys(data.listings).length > 0) {
 				$location.path('/result');
 
 				if (Auth.isAuth()) {
