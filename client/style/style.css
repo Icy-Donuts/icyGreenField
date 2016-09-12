@@ -1,17 +1,52 @@
-.neighborhood {
-  display: flex;
-  align-items: baseline;
-  flex-direction: row;
-  justify-content: center;
+/*CSS RESET*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-.error {
-  border: red solid 2px;
-  padding: 10px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  margin-right: 75%;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
+/*STYLEZZ*/
+
+/*SEARCH*/
 #googleMap {
 	width: 800px;
 	height: 600px;
@@ -35,3 +70,242 @@
 .hide {
   display: none;
 }
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+nav {
+  background: #ebebeb;
+  margin: 0;
+  padding: 0;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-container {
+  display: flex;
+  flex-align: row;
+  padding: 0 24px;
+}
+
+/*BUTTONS*/
+.button {
+  height: 24px;
+  border-radius: 3px;
+  border: none;
+  background: #f0441b;
+  color: #fff;
+  font-size: 14px;
+  margin: 0 4px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+}
+.button a{
+  color: inherit;
+  text-decoration: none;
+}
+.inverse {
+  color: #f0441b;
+  background: #fff;
+  border: 2px solid #f0441b;
+}
+.search {
+  background: #a8a8a8;
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  margin-right: 8px;
+}
+.header {
+  width: 100%;
+  height: 120px;
+  margin-top: 16px;
+  background: #8ef1dd;
+  margin-bottom: -32px;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 64px;
+}
+.card {
+  border-radius: 3px;
+  background: #fff;
+  width: 976px;
+  box-shadow: 0 3px 1px rgba(0,0,0,0.3);
+  padding-bottom: 64px;
+}
+h1 {
+  padding: 32px;
+  font-size: 20px;
+}
+.body-text {
+  padding: 0 32px 32px 32px;
+  font-size: 14px;
+  color: #c9c7c7;
+}
+h2 {
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+.form-hr {
+  border-top: 2px solid #c9c7c7;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-hr > .form-section:last-child {
+  border-left: solid 2px #c9c7c7;
+  padding-left: 32px
+}
+.form-section {
+  margin-top: 32px;
+  width: 488px;
+}
+.label {
+  border-bottom: 1px solid #898989;
+  color: #898989;
+  display: block;
+  width: 366px;
+  margin-bottom: 32px;
+}
+.label input {
+  border: none;
+  margin-left: 16px;
+  width: 300px;
+  font-size: 14px;
+}
+.checkbox-label {
+  border: none;
+  margin-bottom: 8px;
+}
+.aside {
+  color: #c9c7c7;
+  display: block;
+  margin-bottom: 16px;
+}
+.checkbox {
+  margin-top: 8px;
+  color: #898989;
+}
+.options-field {
+  display: block;
+  border-bottom: 1px solid #898989;
+  margin-bottom: 32px;
+}
+.options-field input {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  width: 366px;
+}
+.centered {
+  display: block;
+  margin: 64px auto 0;
+}
+
+/* Results */
+
+.neighborhood {
+  width: 976px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+}
+.neighborhood-section {
+  width: 304px;
+}
+.header-text {
+  margin-top: -96px;
+}
+.black {
+  color: #000;
+  margin-top: -16px;
+}
+.img-container {
+  width: 304px;
+  height: 304px;
+  overflow: hidden;
+  position: relative;
+}
+.neighborhood-img {
+  width: 100%;
+}
+.blurb-container {
+  height: 304px;
+  width: 304px;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.blurb-title {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.blurb {
+  color: #fff;
+  padding: 16px;
+}
+.map-container {
+  background: #fff;
+  height: 448px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -8px;
+  padding-top: 24px;
+}
+#googleMap {
+  height: 448px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.listings-container .row {
+  padding: 0 8px;
+  margin: 8px;
+  background: #ebebeb;
+}
+.listings-container .row:nth-child(even) {
+  background: #f9f7f7;
+}
+.listing-title {
+  padding: 8px;
+  display: block;
+}
+.listing-link {
+  text-decoration: none;
+  color: #f0441b;
+  font-weight: 600;
+  display: block;
+}
+.listing-link a {
+  color: #f0441b;
+  text-decoration: none;
+}
+.listing-price {
+  display: block;
+}
+.listing-read-more {
+  text-transform: uppercase;
+  color: #f0441b;
+}
+
+
