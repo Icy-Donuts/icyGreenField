@@ -1,4 +1,4 @@
-angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.result', 'housing.service', 'housing.auth', 'housing.profile','ngRoute'])
+angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.result', 'housing.service', 'housing.loading', 'housing.auth', 'housing.profile','ngRoute'])
 .config(function($routeProvider, $httpProvider) { // all routers here
 	$routeProvider
 	.when('/signin', { // routes to signin page
@@ -26,7 +26,8 @@ angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.
     controller: 'SearchFromProfileController'
   })
 	.when('/loading', { // routes to loading page
-		templateUrl: 'loadingPage/loading.html'
+		templateUrl: 'loadingPage/loading.html',
+    controller: 'LoadingController'
 	})
 	.otherwise({ // other routes will be led to search page
 		redirectTo: '/search'
