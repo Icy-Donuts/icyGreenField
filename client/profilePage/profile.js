@@ -3,8 +3,7 @@ angular.module('housing.profile', [])
 .controller('profileController', function ($scope, $window, $location, Service, Auth) {
   if (Auth.isAuth()) {
     var token = window.localStorage.getItem('com.shortly');
-    var payload = JSON.parse(window.atob(token.split('.')[1])); 
-  
+    var payload = JSON.parse(window.atob(token.split('.')[1]));
     Service.getPrefs(payload.username).then(function(data) {
   	 $scope.preferences = data.preferences;
     });
@@ -22,5 +21,4 @@ angular.module('housing.profile', [])
   		$location.path('/result');
   	});
   };
-    
 });

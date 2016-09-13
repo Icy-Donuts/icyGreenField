@@ -1,8 +1,14 @@
+<button class='button inverse'><a href='#/searchFromProfile'>Go back</a></button>
+<br>
 <div class="card">
-  <button class='button'><a href='#/searchFromProfile'>Search</a></button>
-	<div class="profile" ng-click="search($index)" g-repeat="pref in preferences track by $index">
-		<h1> location: {{pref.location}}</h1>
+  <br><br>
+	<div class="profile" ng-click="search($index)" ng-repeat="pref in preferences track by $index">
+    <button class="button" ng-click="search($index)">search with these settings</button>
+		<h1>location: {{pref.location}}</h1>
 		<h1>yelp preferences: {{pref.yelpPrefs}}</h1>
-    <h1>Search: max budget:{{pref.maxBudget}}</h1>
+    <h1>max budget:{{pref.maxBudget}}</h1>
+    <br>
+    <hr>
+    <br>
 	</div>
 </div>

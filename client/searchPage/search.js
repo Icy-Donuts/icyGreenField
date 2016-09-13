@@ -21,7 +21,7 @@ angular.module('housing.search', [])
 
 				if (Auth.isAuth()) {
 					var token = window.localStorage.getItem('com.shortly')
-					var payload = JSON.parse(window.atob(token.split('.')[1])); 
+					var payload = JSON.parse(window.atob(token.split('.')[1]));
 					$scope.username = payload.username;
 
 					Service.savePrefs($scope.username, $scope.location, $scope.term, $scope.budget).then(function(data) {
