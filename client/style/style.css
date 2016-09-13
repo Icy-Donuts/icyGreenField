@@ -307,5 +307,18 @@ h2 {
   text-transform: uppercase;
   color: #f0441b;
 }
+.error {
+  color: red;
+  border: red solid 2px;
+  padding: 10px;
+  margin: 15px 75% 5px 0;
+}
+.body-header-text {
+  color: #ebebeb;
+  margin: 32px;
+}
 
-
+a.head {
+  color: #f0441b;
+  text-decoration: none;
+}

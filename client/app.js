@@ -108,6 +108,10 @@ angular.module('main', ['housing.search', 'housing.searchFromProfile', 'housing.
     $window.localStorage.removeItem('com.shortly');
     $location.path('/search');
   };
+  var signout = function () {
+    $window.localStorage.removeItem('com.shortly');
+    $location.path('/search');
+  };
 
   return {
     signin: signin,

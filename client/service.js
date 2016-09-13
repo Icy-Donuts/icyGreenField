@@ -1,6 +1,5 @@
 angular.module('housing.service', [])
 .factory('Service', function($http) {
-	
 	var savePrefs = function(name, location, term, budget) {
 		var searchLocation = location || 'sf';
 		var searchTerm = term || '';
@@ -13,7 +12,7 @@ angular.module('housing.service', [])
 				username: name,
 				location: searchLocation,
 				term: searchTerm,
-				budget: searchBudget				
+				budget: searchBudget
 			}
 		}).then(function(res){
 			return res.data;
@@ -25,7 +24,7 @@ angular.module('housing.service', [])
 			method: 'GET',
 			url: '/api/users/getPreferences',
 			params: {
-				username: name		
+				username: name
 			}
 		}).then(function(res) {
 			return res.data;
